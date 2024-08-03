@@ -3,6 +3,7 @@ import model.dao.SellerDao;
 import model.entities.Department;
 import model.entities.Seller;
 
+import java.util.Date;
 import java.util.List;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
@@ -21,5 +22,18 @@ public class Main {
         for (Seller s : list) {
             System.out.println(s);
         }
+
+        System.out.println();
+        List<Seller> allSellers = sellerDao.findAll();
+        System.out.println("All sellers: ");
+
+        for (Seller s : allSellers) {
+            System.out.println(s);
+        }
+
+        System.out.println();
+        Seller newSeller = new Seller(null, "Antonio", "antonio@gmail.com", new Date(), 3000.0, department);
+        sellerDao.insert(newSeller);
+        System.out.println("Inserted! New id created = " + newSeller.getId());
     }
 }
