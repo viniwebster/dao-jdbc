@@ -1,4 +1,5 @@
 import model.dao.DaoFactory;
+import model.dao.DepartmentDao;
 import model.dao.SellerDao;
 import model.entities.Department;
 import model.entities.Seller;
@@ -44,5 +45,10 @@ public class Main {
         sellerDao.update(updateSeller);
         System.out.println("Updated! ");
 
+
+        System.out.println();
+        System.out.println("Delete seller: ");
+        sellerDao.deleteById(13);
+        System.out.println("Deleted! ");
     }
 }
