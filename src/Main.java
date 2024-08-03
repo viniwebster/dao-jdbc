@@ -35,5 +35,14 @@ public class Main {
         Seller newSeller = new Seller(null, "Antonio", "antonio@gmail.com", new Date(), 3000.0, department);
         sellerDao.insert(newSeller);
         System.out.println("Inserted! New id created = " + newSeller.getId());
+
+        System.out.println();
+        System.out.println("Update seller: ");
+        Seller updateSeller = sellerDao.findById(3);
+        updateSeller.setBaseSalary(5000.0);
+        updateSeller.setEmail("alex2@gmail.com");
+        sellerDao.update(updateSeller);
+        System.out.println("Updated! ");
+
     }
 }
